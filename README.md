@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Loan Management Application
+
+A web application built with Next.js, Tailwind CSS, and Prisma for managing loans. This application allows users to create, view, update, and delete loans efficiently and effortlessly.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [License](#license)
+
+## Features
+
+- **CRUD Operations**: Create, Read, Update, and Delete loans.
+- **Responsive Design**: Built with Tailwind CSS for a modern and responsive UI.
+- **Dark Mode**: Toggle between light and dark themes.
+- **User-Friendly Interface**: Intuitive navigation and user experience.
+
+## Technologies Used
+
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **shadcn/ui**: A collection of UI components for React.
+- **Prisma**: An ORM for database interactions.
+- **PostgreSQL**: A relational database for storing loan data.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (version 14 or later)
+- PostgreSQL (installed and running)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   
+   ```bash
+   git clone <your-repo-url>
+   cd loan-management-app
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. Set up the database:
+   
+   - Create a PostgreSQL database named `loan_management`.
+   - Update the `.env` file with your database connection string:
+     
+     ```env
+     DATABASE_URL="postgresql://admin:admin@localhost:5432/loan_management?schema=public"
+     ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run database migrations:
+   
+   ```bash
+   npx prisma migrate dev --name init
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Start the development server:
+   
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+6. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Home Page**: View a welcoming message and navigate to the loans page.
+- **Loan List Page**: View all loans, create new loans, edit existing loans, and delete loans.
+- **Loan Form Page**: Fill out a form to create or edit loan details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Endpoints
+
+- **GET** `/api/loans`: Fetch all loans.
+- **GET** `/api/loans?id={id}`: Fetch a specific loan by ID.
+- **POST** `/api/loans`: Create a new loan.
+- **PUT** `/api/loans`: Update an existing loan.
+- **DELETE** `/api/loans?id={id}`: Delete a loan by ID.
+
+## License
+
+This project is licensed under the MIT License.
