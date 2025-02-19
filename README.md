@@ -1,6 +1,6 @@
 # Loan Management Application
 
-A web application built with Next.js, Tailwind CSS, and Prisma for managing loans. This application allows users to create, view, update, and delete loans efficiently and effortlessly.
+A web application built with Next.js, Tailwind CSS, shadcn/ui, and Prisma for managing loans. This application allows users to create, view, update, and delete loans efficiently and effortlessly.
 
 ## Table of Contents
 
@@ -17,7 +17,6 @@ A web application built with Next.js, Tailwind CSS, and Prisma for managing loan
 
 - **CRUD Operations**: Create, Read, Update, and Delete loans.
 - **Responsive Design**: Built with Tailwind CSS for a modern and responsive UI.
-- **Dark Mode**: Toggle between light and dark themes.
 - **User-Friendly Interface**: Intuitive navigation and user experience.
 
 ## Technologies Used
